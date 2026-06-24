@@ -350,10 +350,10 @@ function renderSlideList() {
 // Go to Specific Slide
 function goToSlide(index) {
     if (index < 0 || index >= slides.length) return;
-    
+
     // Save state
     currentSlideIndex = index;
-    
+
     // Update sidebar selection
     const items = slideList.querySelectorAll('.slide-item');
     items.forEach((item, idx) => {
@@ -422,10 +422,10 @@ function stopAutoplay() {
 // Render Slide HTML Content
 function renderSlideContent(slide) {
     slideContainer.innerHTML = '';
-    
+
     const slideDiv = document.createElement('div');
     slideDiv.className = 'slide';
-    
+
     // Header
     const slideHeader = `
         <div class="slide-header">
@@ -433,10 +433,10 @@ function renderSlideContent(slide) {
             <h2 class="slide-title">${slide.title}</h2>
         </div>
     `;
-    
+
     // Body Generation based on Slide Type
     let slideBody = '';
-    
+
     if (slide.type === 'title') {
         // Title Slide Layout
         let gridHTML = '';
@@ -449,7 +449,7 @@ function renderSlideContent(slide) {
                 </div>
             `;
         });
-        
+
         slideBody = `
             <div class="title-slide-body">
                 <div class="title-badge-main">M.Sc. (I.C.T.) 4th Sem Project</div>
@@ -470,7 +470,7 @@ function renderSlideContent(slide) {
         slide.bullets.forEach(bullet => {
             bulletsHTML += `<li>${bullet}</li>`;
         });
-        
+
         let visualHTML = '';
         if (slide.image) {
             visualHTML = `
@@ -485,7 +485,7 @@ function renderSlideContent(slide) {
                 </div>
             `;
         }
-        
+
         slideBody = `
             <div class="slide-body ${slide.image ? '' : 'single-col'}">
                 <div class="slide-text-content">
@@ -504,7 +504,7 @@ function renderSlideContent(slide) {
             cls.responsibilities.forEach(r => respHTML += `<li>${r}</li>`);
             let collHTML = '';
             cls.collaborators.split(',').forEach(c => collHTML += `<li>${c.trim()}</li>`);
-            
+
             cardsHTML += `
                 <div class="crc-card">
                     <div class="crc-header">
@@ -524,7 +524,7 @@ function renderSlideContent(slide) {
                 </div>
             `;
         });
-        
+
         slideBody = `
             <div class="slide-body single-col">
                 <div class="crc-grid">
@@ -536,10 +536,10 @@ function renderSlideContent(slide) {
         // Sequence Diagrams with Admin / Learner Tabs
         let bulletsHTML = '';
         slide.bullets.forEach(b => bulletsHTML += `<li>${b}</li>`);
-        
+
         const activeImg = activeSequenceTab === 'admin' ? slide.images.admin : slide.images.learner;
         const activeCap = activeSequenceTab === 'admin' ? 'Admin Interaction Sequence' : 'Learner Interaction Sequence';
-        
+
         slideBody = `
             <div class="slide-body">
                 <div class="slide-text-content">
@@ -576,7 +576,7 @@ function renderSlideContent(slide) {
                 </div>
             `;
         });
-        
+
         slideBody = `
             <div class="slide-body">
                 <div class="slide-text-content">
@@ -619,7 +619,7 @@ function renderSlideContent(slide) {
                 </div>
             `;
         });
-        
+
         slideBody = `
             <div class="slide-body single-col">
                 <div class="tech-grid">
@@ -628,25 +628,25 @@ function renderSlideContent(slide) {
             </div>
         `;
     }
-    
+
     // Combine structure
     if (slide.type === 'title') {
         slideDiv.innerHTML = slideBody;
     } else {
         slideDiv.innerHTML = slideHeader + slideBody;
     }
-    
+
     slideContainer.appendChild(slideDiv);
 }
 
 // Switch Sequence Tabs
-window.switchSequenceTab = function(tab) {
+window.switchSequenceTab = function (tab) {
     activeSequenceTab = tab;
     goToSlide(currentSlideIndex); // Re-render current slide
 }
 
 // Switch UI Gallery Images
-window.switchGalleryImage = function(index) {
+window.switchGalleryImage = function (index) {
     activeGalleryIndex = index;
     goToSlide(currentSlideIndex); // Re-render current slide
 }
@@ -656,7 +656,7 @@ function openLightbox(imgSrc, captionText) {
     lightboxImg.src = imgSrc;
     lightboxCaption.textContent = captionText;
     lightbox.classList.add('active');
-    
+
     // Reset zoom and pan
     zoomLevel = 1.0;
     panOffset = { x: 0, y: 0 };
@@ -677,7 +677,7 @@ function setupEventListeners() {
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
     playBtn.addEventListener('click', togglePlay);
-    
+
     // Autoplay Speed Selection
     speedSelect.addEventListener('change', (e) => {
         autoplayInterval = parseInt(e.target.value);
@@ -698,7 +698,7 @@ function setupEventListeners() {
     toggleSidebarBtn.addEventListener('click', () => {
         sidebar.classList.toggle('collapsed');
     });
-    
+
     closeSidebarBtn.addEventListener('click', () => {
         sidebar.classList.add('collapsed');
     });
@@ -714,17 +714,17 @@ function setupEventListeners() {
 
     // Lightbox Controls
     lightboxCloseBtn.addEventListener('click', closeLightbox);
-    
+
     zoomInBtn.addEventListener('click', () => {
         zoomLevel = Math.min(zoomLevel + 0.25, 4.0);
         updateImageTransform();
     });
-    
+
     zoomOutBtn.addEventListener('click', () => {
         zoomLevel = Math.max(zoomLevel - 0.25, 0.5);
         updateImageTransform();
     });
-    
+
     zoomResetBtn.addEventListener('click', () => {
         zoomLevel = 1.0;
         panOffset = { x: 0, y: 0 };
@@ -733,7 +733,7 @@ function setupEventListeners() {
 
     // Drag-to-Pan in Lightbox
     const lightboxContentElem = document.querySelector('.lightbox-content');
-    
+
     lightboxContentElem.addEventListener('mousedown', (e) => {
         isPanning = true;
         panStart = { x: e.clientX - panOffset.x, y: e.clientY - panOffset.y };
@@ -767,7 +767,7 @@ function setupEventListeners() {
             if (e.key === 'Escape') closeLightbox();
             return;
         }
-        
+
         switch (e.key) {
             case 'ArrowRight':
             case 'Space':
@@ -789,7 +789,7 @@ function setupEventListeners() {
 // Preload all slide images to prevent loading lag
 function preloadSlideImages() {
     const imagesToPreload = new Set();
-    
+
     slides.forEach(slide => {
         if (slide.image) {
             imagesToPreload.add(slide.image);
@@ -802,7 +802,7 @@ function preloadSlideImages() {
             }
         }
     });
-    
+
     imagesToPreload.forEach(src => {
         const img = new Image();
         img.src = src;
