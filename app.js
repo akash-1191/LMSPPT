@@ -11,8 +11,7 @@ const slides = [
         subtitle: "A Web-Based Platform for Centralized Training, Standard E-Learning (SCORM), and AI-Assisted Learning Support",
         info: [
             { label: "Submitted By", value: "Maurya Akash Radheshyam", subvalue: "Enrollment: R24110018000710021" },
-            { label: "Internal Project Guide", value: "Dr. ABC", subvalue: "M.Sc. (I.C.T.) Programme Coordinator" },
-            { label: "External Project Guide", value: "Mr. XYZ", subvalue: "Project Lead, Shree Krupa Systems" }
+            { label: "Internal Project Guide", value: "DR. Dhaval Joshi", subvalue: "Department of I.C.T., VNSGU" }
         ],
         company: {
             name: "Developed at Shree Krupa Systems Pvt. Ltd., Surat",
@@ -327,6 +326,7 @@ function init() {
     renderSlideList();
     goToSlide(0);
     setupEventListeners();
+    preloadSlideImages(); // Preload images in background
 }
 
 // Render Slide List in Sidebar
@@ -783,6 +783,29 @@ function setupEventListeners() {
                 sidebar.classList.add('collapsed');
                 break;
         }
+    });
+}
+
+// Preload all slide images to prevent loading lag
+function preloadSlideImages() {
+    const imagesToPreload = new Set();
+    
+    slides.forEach(slide => {
+        if (slide.image) {
+            imagesToPreload.add(slide.image);
+        }
+        if (slide.images) {
+            if (Array.isArray(slide.images)) {
+                slide.images.forEach(img => imagesToPreload.add(img));
+            } else if (typeof slide.images === 'object') {
+                Object.values(slide.images).forEach(img => imagesToPreload.add(img));
+            }
+        }
+    });
+    
+    imagesToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
     });
 }
 
