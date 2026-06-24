@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GyrusLMS - Final Project Presentation</title>
+    <!-- Google Fonts: Outfit for Headings, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Ionicons for modern, clean iconography -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <span class="logo-accent">Gyrus</span>LMS
+                </div>
+                <button class="icon-btn close-sidebar-btn" id="closeSidebarBtn" title="Collapse Sidebar">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+            </div>
+
+            <div class="slide-list" id="slideList">
+                <!-- Dynamically generated list of slides -->
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="student-info">
+                    <div class="student-name">Maurya Akash R.</div>
+                    <div class="student-id">R24110018000710021</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace Area -->
+        <main class="main-content">
+            <!-- Header Toolbar -->
+            <header class="app-header">
+                <div class="header-left">
+                    <button class="icon-btn" id="toggleSidebarBtn" title="Toggle Sidebar">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </button>
+                    <h1 class="project-title-header">M.Sc. (I.C.T.) Final Project Defense</h1>
+                </div>
+                <div class="header-right">
+                    <button class="action-btn-secondary" id="printBtn" title="Print Presentation / Export to PDF">
+                        <ion-icon name="print-outline"></ion-icon>
+                        <span>Print PDF</span>
+                    </button>
+                    <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Dark Mode">
+                        <ion-icon name="sunny-outline" id="themeIconSun"></ion-icon>
+                        <ion-icon name="moon-outline" id="themeIconMoon"></ion-icon>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Slide Viewport -->
+            <section class="slide-viewport">
+                <div class="slide-container" id="slideContainer">
+                    <!-- Active slide will be injected here -->
+                </div>
+            </section>
+
+            <!-- Playback Controls -->
+            <footer class="slide-footer">
+                <div class="controls-left">
+                    <button class="icon-btn-large" id="prevBtn" title="Previous Slide (Left Arrow)">
+                        <ion-icon name="arrow-back-outline"></ion-icon>
+                    </button>
+
+                    <button class="icon-btn-large" id="playBtn" title="Play Slideshow">
+                        <ion-icon name="play-outline" id="playIcon"></ion-icon>
+                        <ion-icon name="pause-outline" id="pauseIcon" style="display: none;"></ion-icon>
+                    </button>
+
+                    <button class="icon-btn-large" id="nextBtn" title="Next Slide (Right Arrow / Space)">
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </button>
+                </div>
+
+                <div class="controls-center">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+                    </div>
+                    <div class="slide-counter">
+                        Slide <span id="currentSlideNum">1</span> of <span id="totalSlidesNum">15</span>
+                    </div>
+                </div>
+
+                <div class="controls-right">
+                    <div class="autoplay-speed-selector">
+                        <label for="speedSelect">Interval:</label>
+                        <select id="speedSelect">
+                            <option value="5000">5s</option>
+                            <option value="8000" selected>8s</option>
+                            <option value="12000">12s</option>
+                            <option value="15000">15s</option>
+                        </select>
+                    </div>
+                    <!-- 
+                    <button class="action-btn-secondary" id="notesToggleBtn" title="Toggle Presentation Notes">
+                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                        <span>Speaker Notes</span>
+                    </button> -->
+                </div>
+            </footer>
+
+            <!-- Collapsible Speaker Notes Drawer -->
+            <!-- <section class="speaker-notes-drawer collapsed" id="speakerNotesDrawer">
+                <div class="notes-header">
+                    <div class="notes-title">
+                        <ion-icon name="document-text-outline"></ion-icon>
+                        <span>Speaker Script / Explanations</span>
+                    </div>
+                    <div class="notes-actions">
+                        <button class="notes-action-btn" id="copyNotesBtn" title="Copy Notes to Clipboard">
+                            <ion-icon name="copy-outline"></ion-icon>
+                            <span>Copy Notes</span>
+                        </button>
+                        <button class="icon-btn" id="closeNotesBtn" title="Minimize Notes">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="notes-content" id="notesContent">
+                     Text for speaker notes 
+                </div>
+            </section> -->
+        </main>
+    </div>
+
+    <!-- Fullscreen Diagram Zoom Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxCloseBtn" title="Close Zoom (Esc)">
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <div class="lightbox-toolbar">
+            <button class="lightbox-btn" id="zoomOutBtn" title="Zoom Out">
+                <ion-icon name="remove-outline"></ion-icon>
+            </button>
+            <button class="lightbox-btn" id="zoomResetBtn" title="Reset Zoom">
+                <ion-icon name="expand-outline"></ion-icon>
+            </button>
+            <button class="lightbox-btn" id="zoomInBtn" title="Zoom In">
+                <ion-icon name="add-outline"></ion-icon>
+            </button>
+        </div>
+        <div class="lightbox-caption" id="lightboxCaption">
+            Diagram Title
+        </div>
+        <div class="lightbox-content" id="lightboxContent">
+            <img src="" alt="Zoomed Diagram" id="lightboxImg">
+        </div>
+        <div class="lightbox-instructions">
+            Drag to pan | Scroll mouse wheel to zoom | Escape to exit
+        </div>
+    </div>
+
+    <!-- Presentation scripts -->
+    <script src="app.js"></script>
+</body>
+
+</html>
