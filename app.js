@@ -11,7 +11,8 @@ const slides = [
         subtitle: "A Web-Based Platform for Centralized Training, Standard E-Learning (SCORM), and AI-Assisted Learning Support",
         info: [
             { label: "Submitted By", value: "Maurya Akash Radheshyam", subvalue: "Enrollment: R24110018000710021" },
-            { label: "Internal Project Guide", value: "DR. Dhaval Joshi", subvalue: "Department of I.C.T., VNSGU" }
+            { label: "Internal Project Guide", value: "DR. Dhaval Joshi", subvalue: "Department of I.C.T., VNSGU" },
+            { label: "External Project Guide", value: "Shrushti Pastagiya", subvalue: "Shree Krupa Systems Pvt. Ltd., Surat" }
         ],
         company: {
             name: "Developed at Shree Krupa Systems Pvt. Ltd., Surat",
