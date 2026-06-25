@@ -218,20 +218,255 @@ const slides = [
     {
         title: "User Interface Showcase",
         badge: "Interface Design",
-        type: "gallery",
-        images: [
-            "extracted_media/UI_Screenshot_1.png",
-            "extracted_media/UI_Screenshot_2.png",
-            "extracted_media/UI_Screenshot_3.png",
-            "extracted_media/UI_Screenshot_4.png"
+        type: "ui-catalog",
+        uiSections: [
+            {
+                category: "Authentication",
+                screens: [
+                    {
+                        name: "Login Portal",
+                        desc: "Secure login interface checking user credentials and issuing JWT tokens with role configurations.",
+                        bullets: [
+                            "JWT authentication tokens generation.",
+                            "Validation warnings for empty/invalid fields.",
+                            "Theme switcher support on login portal."
+                        ],
+                        images: [
+                            "extracted_media/UI_Login_1.png",
+                            "extracted_media/UI_Login_2.png",
+                            "extracted_media/UI_Login_3.png",
+                            "extracted_media/UI_Login_4.png"
+                        ],
+                        captions: [
+                            "Secure User Login Panel",
+                            "JWT validation credentials view",
+                            "In-app password reset screen",
+                            "Role-based authorization redirect"
+                        ]
+                    }
+                ]
+            },
+            {
+                category: "Admin Management",
+                screens: [
+                    {
+                        name: "Admin Dashboard",
+                        desc: "General dashboard displaying corporate analytics, user summaries, and chatbot statistics.",
+                        bullets: [
+                            "Dynamic analytics count counters.",
+                            "Corporate organization setup matrix.",
+                            "Job profiles mapping table.",
+                            "Employee account administration dashboard."
+                        ],
+                        images: [
+                            "extracted_media/UI_Admin_Dashboard_1.png",
+                            "extracted_media/UI_Admin_Dashboard_2.png",
+                            "extracted_media/UI_Admin_Dashboard_3.png",
+                            "extracted_media/UI_Admin_Dashboard_4.png",
+                            "extracted_media/UI_Admin_Dashboard_5.png",
+                            "extracted_media/UI_Admin_Dashboard_10.png",
+                            "extracted_media/UI_Admin_Dashboard_15.png"
+                        ],
+                        captions: [
+                            "Admin Dashboard Overview",
+                            "Department Configuration Panel",
+                            "Job Designations Matrix",
+                            "Employee Accounts Database",
+                            "Corporate Mapping Configuration",
+                            "System Setting Overrides",
+                            "Dashboard Activity Summary"
+                        ]
+                    },
+                    {
+                        name: "Document Training",
+                        desc: "Interface to upload study materials (PDF/text) and configure training attributes.",
+                        bullets: [
+                            "PDF upload controller mapping.",
+                            "Training parameters setup fields.",
+                            "Access permission settings."
+                        ],
+                        images: [
+                            "extracted_media/UI_Document_Type_Training_1.png",
+                            "extracted_media/UI_Document_Type_Training_2.png",
+                            "extracted_media/UI_Document_Type_Training_3.png",
+                            "extracted_media/UI_Document_Type_Training_6.png"
+                        ],
+                        captions: [
+                            "Add New Document Training form",
+                            "File Directory Upload modal",
+                            "Active PDF document viewer",
+                            "Training list details panel"
+                        ]
+                    },
+                    {
+                        name: "SCORM Packages",
+                        desc: "Upload SCORM course files (ZIP) to process and launch SCORM interactive players.",
+                        bullets: [
+                            "ZIP extraction manifest check.",
+                            "IMSMANIFEST.xml schema configurations.",
+                            "Course player URL linking."
+                        ],
+                        images: [
+                            "extracted_media/UI_SCROM_Type_Training_1.png",
+                            "extracted_media/UI_SCROM_Type_Training_2.png",
+                            "extracted_media/UI_SCROM_Type_Training_3.png",
+                            "extracted_media/UI_SCROM_Type_Training_4.png"
+                        ],
+                        captions: [
+                            "SCORM upload interface",
+                            "Manifest parsing status details",
+                            "SCORM player launcher settings",
+                            "Completions tracking rules"
+                        ]
+                    },
+                    {
+                        name: "Learning Path Setup",
+                        desc: "Map a series of individual courses in a step-by-step sequence to form a path.",
+                        bullets: [
+                            "Drag-to-order course selector.",
+                            "Prerequisite status definitions.",
+                            "Path description configurations."
+                        ],
+                        images: [
+                            "extracted_media/UI_Learning_Path_Training_1.png",
+                            "extracted_media/UI_Learning_Path_Training_2.png",
+                            "extracted_media/UI_Learning_Path_Training_3.png",
+                            "extracted_media/UI_Learning_Path_Training_5.png"
+                        ],
+                        captions: [
+                            "Add Learning Path general form",
+                            "Mapping Course Sequence items",
+                            "Path details preview panel",
+                            "Assigning Path to Job/Org"
+                        ]
+                    }
+                ]
+            },
+            {
+                category: "Exams & Questions",
+                screens: [
+                    {
+                        name: "Assessments Settings",
+                        desc: "Define parameters for quiz execution including passmarks, duration timers, and attempts limit.",
+                        bullets: [
+                            "Interactive countdown timer settings.",
+                            "Maximum attempts constraint check.",
+                            "Grade passmark parameters."
+                        ],
+                        images: [
+                            "extracted_media/UI_Assessment_1.png",
+                            "extracted_media/UI_Assessment_2.png",
+                            "extracted_media/UI_Assessment_3.png",
+                            "extracted_media/UI_Assessment_6.png"
+                        ],
+                        captions: [
+                            "Assessment Configuration Window",
+                            "Attempts Rules definition form",
+                            "Linked assessments list",
+                            "Grading criteria summaries"
+                        ]
+                    },
+                    {
+                        name: "Question Category Banks",
+                        desc: "Define and search question lists grouped under specific tags/topics.",
+                        bullets: [
+                            "Category listing columns.",
+                            "MCQ choices config panel.",
+                            "Linked quiz associations."
+                        ],
+                        images: [
+                            "extracted_media/UI_Question_Categories_1.png",
+                            "extracted_media/UI_Question_Categories_2.png",
+                            "extracted_media/UI_Question_Categories_3.png",
+                            "extracted_media/UI_Question_Categories_5.png"
+                        ],
+                        captions: [
+                            "Question Category list View",
+                            "Choice List creator details",
+                            "Questions list database overview",
+                            "Category linkage panel"
+                        ]
+                    }
+                ]
+            },
+            {
+                category: "AI & Support",
+                screens: [
+                    {
+                        name: "AI & Helpdesk",
+                        desc: "Admin view of chatbot log summaries, insights, and technical support tickets.",
+                        bullets: [
+                            "Chat history conversation logs.",
+                            "Unresolved queries dashboard.",
+                            "Support ticket response panel."
+                        ],
+                        images: [
+                            "extracted_media/UI_AI_Mainteance_1.png",
+                            "extracted_media/UI_ChatBoatInsight_page_1.png",
+                            "extracted_media/UI_Support_ticket_1.png"
+                        ],
+                        captions: [
+                            "AI Maintenance Config Page",
+                            "Chatbot Prompts Insights Logs",
+                            "Support Ticket Management list"
+                        ]
+                    }
+                ]
+            },
+            {
+                category: "Learner Portal",
+                screens: [
+                    {
+                        name: "Learner Journey",
+                        desc: "Personalized dashboard showing assigned courses, course catalog, progress tracker.",
+                        bullets: [
+                            "Completions progress graphs.",
+                            "Active courses card grid.",
+                            "Course Catalog search bar.",
+                            "Personal metrics dashboard."
+                        ],
+                        images: [
+                            "extracted_media/UI_Learner_Dashboard_1.png",
+                            "extracted_media/UI_IPD_1.png",
+                            "extracted_media/UI_IPD_4.png",
+                            "extracted_media/UI_IPD_6.png",
+                            "extracted_media/UI_Course_Catalog_1.png"
+                        ],
+                        captions: [
+                            "Learner Dashboard Overview",
+                            "Individual Progress tracking page",
+                            "Activity statistics graph",
+                            "Course Detail information card",
+                            "Available Course Catalog lookups"
+                        ]
+                    },
+                    {
+                        name: "Quiz Attempts & Chat",
+                        desc: "Self-assessment boards, technical ticket forms, and Google Gemini AI chat panel.",
+                        bullets: [
+                            "Completions pass/fail status updates.",
+                            "Gemini chatbot conversation board.",
+                            "Language translation picker dropdown."
+                        ],
+                        images: [
+                            "extracted_media/UI_My_Assessment_1.png",
+                            "extracted_media/UI_My_Assessment_2.png",
+                            "extracted_media/UI_ChatBoat_1.png",
+                            "extracted_media/UI_Support_1.png",
+                            "extracted_media/UI_Language_Change_model_1.png"
+                        ],
+                        captions: [
+                            "My Quiz Attempts dashboard",
+                            "Quiz Result certificate tracker",
+                            "Gemini Chatbot prompt assistant",
+                            "Submit support ticket form",
+                            "Language Switcher interface"
+                        ]
+                    }
+                ]
+            }
         ],
-        captions: [
-            "GyrusLMS Admin Dashboard & Training Overview Screen",
-            "Learner Dashboard - Assigned Courses and Progress Tracking",
-            "Interactive Assessment & Quiz Taker with Count Down Timer",
-            "AI Chatbot Learner Assistant with Gemini-Powered Threading"
-        ],
-        notes: "This slide showcases the screenshots of the completed GyrusLMS application. We can see the Admin Dashboard with user stats, the Learner Dashboard showing course cards and progress status, the interactive Quiz Player featuring a countdown timer, and the Google Gemini-powered AI Chatbot screen where learners receive instant, contextual help."
+        notes: "This catalog presents 88 categorized screenshots showing the completed interface design of GyrusLMS. The admin panel covers dashboards, course configurations (Documents, SCORM, Learning Paths), and helpdesks. The learner panel showcases course catalog lookups, interactive quiz timelines, support windows, and the Google Gemini AI chatbot interface."
     },
     {
         title: "Technology Stack & Development Environment",
@@ -288,6 +523,14 @@ let panStart = { x: 0, y: 0 };
 let panOffset = { x: 0, y: 0 };
 let activeSequenceTab = 'admin'; // 'admin' or 'learner'
 let activeGalleryIndex = 0;
+let activeUiCategoryIndex = 0;
+let activeUiScreenIndex = 0;
+let activeUiImageIndex = 0;
+
+// Lightbox slideshow state
+let lightboxImagesList = [];
+let lightboxCaptionsList = [];
+let lightboxCurrentIndex = 0;
 
 // DOM Elements
 const sidebar = document.getElementById('sidebar');
@@ -475,7 +718,7 @@ function renderSlideContent(slide) {
         if (slide.image) {
             visualHTML = `
                 <div class="slide-visual-content">
-                    <div class="diagram-card" onclick="openLightbox('${slide.image}', '${slide.caption || slide.title}')">
+                    <div class="diagram-card" onclick="openDiagramZoom('${slide.image}', '${slide.caption || slide.title}')">
                         <img src="${slide.image}" class="diagram-img" alt="${slide.title}">
                         <div class="zoom-hint">
                             <ion-icon name="search-outline"></ion-icon>
@@ -556,7 +799,7 @@ function renderSlideContent(slide) {
                     </ul>
                 </div>
                 <div class="slide-visual-content">
-                    <div class="diagram-card" onclick="openLightbox('${activeImg}', '${activeCap}')">
+                    <div class="diagram-card" onclick="openSequenceZoom()">
                         <img src="${activeImg}" class="diagram-img" alt="Sequence Diagram">
                         <div class="zoom-hint">
                             <ion-icon name="search-outline"></ion-icon>
@@ -566,38 +809,77 @@ function renderSlideContent(slide) {
                 </div>
             </div>
         `;
-    } else if (slide.type === 'gallery') {
-        // UI Screenshots gallery view
-        let thumbsHTML = '';
-        slide.images.forEach((img, idx) => {
-            thumbsHTML += `
-                <div class="ui-thumb ${idx === activeGalleryIndex ? 'active' : ''}" onclick="switchGalleryImage(${idx})">
-                    <img src="${img}" alt="UI Thumbnail">
-                </div>
-            `;
-        });
-
-        slideBody = `
-            <div class="slide-body">
-                <div class="slide-text-content">
-                    <p class="slide-description" style="font-weight: 600; color: var(--color-accent); margin-bottom: 8px;">
-                        ${slide.captions[activeGalleryIndex]}
-                    </p>
-                    <ul class="slide-bullets">
-                        <li>Visualizing the high-fidelity client frontend layout.</li>
-                        <li>Angular interfaces leverage responsive CSS with smooth component animations.</li>
-                        <li>Interactive components integrate directly with .NET controllers using secure endpoints.</li>
-                    </ul>
-                    <div class="ui-thumbnails" style="margin-top: 20px;">
-                        ${thumbsHTML}
+    } else if (slide.type === 'ui-catalog') {
+        // UI catalog layout
+        let sidebarHTML = '';
+        
+        slide.uiSections.forEach((section, catIdx) => {
+            sidebarHTML += `<div class="ui-catalog-group">`;
+            sidebarHTML += `<div class="ui-catalog-category-title">${section.category}</div>`;
+            
+            section.screens.forEach((screen, scrIdx) => {
+                const isActive = (catIdx === activeUiCategoryIndex && scrIdx === activeUiScreenIndex);
+                sidebarHTML += `
+                    <div class="ui-catalog-item ${isActive ? 'active' : ''}" onclick="switchUiScreen(${catIdx}, ${scrIdx})">
+                        <ion-icon name="desktop-outline"></ion-icon>
+                        <span>${screen.name}</span>
                     </div>
-                </div>
-                <div class="slide-visual-content">
-                    <div class="ui-main-display" onclick="openLightbox('${slide.images[activeGalleryIndex]}', '${slide.captions[activeGalleryIndex]}')">
-                        <img src="${slide.images[activeGalleryIndex]}" class="ui-main-img" alt="UI Dashboard Screen">
-                        <div class="zoom-hint">
-                            <ion-icon name="search-outline"></ion-icon>
-                            <span>Click to Zoom</span>
+                `;
+            });
+            sidebarHTML += `</div>`;
+        });
+        
+        const currentSection = slide.uiSections[activeUiCategoryIndex];
+        const currentScreen = currentSection.screens[activeUiScreenIndex];
+        
+        // Safety bound check
+        if (activeUiImageIndex >= currentScreen.images.length) {
+            activeUiImageIndex = 0;
+        }
+        
+        const currentImg = currentScreen.images[activeUiImageIndex];
+        const currentCap = currentScreen.captions[activeUiImageIndex];
+        
+        let bulletsHTML = '';
+        currentScreen.bullets.forEach(b => {
+            bulletsHTML += `<li>${b}</li>`;
+        });
+        
+        slideBody = `
+            <div class="ui-catalog-container">
+                <aside class="ui-catalog-sidebar">
+                    ${sidebarHTML}
+                </aside>
+                <div class="ui-catalog-viewer">
+                    <div class="ui-viewer-panel">
+                        <div class="ui-image-frame" onclick="openUIZoom()">
+                            <img src="${currentImg}" alt="${currentScreen.name}">
+                            
+                            <div class="ui-image-controls" onclick="event.stopPropagation();">
+                                <button class="ui-control-btn" onclick="prevUiImage(event)" title="Previous Screenshot">
+                                    <ion-icon name="chevron-back-outline"></ion-icon>
+                                </button>
+                                <span>${activeUiImageIndex + 1} / ${currentScreen.images.length}</span>
+                                <button class="ui-control-btn" onclick="nextUiImage(event)" title="Next Screenshot">
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </button>
+                            </div>
+                            
+                            <div class="zoom-hint">
+                                <ion-icon name="search-outline"></ion-icon>
+                                <span>Click to Zoom</span>
+                            </div>
+                        </div>
+                        <div class="ui-info-card">
+                            <h3 class="ui-screen-title">${currentScreen.name}</h3>
+                            <p class="ui-screen-desc">${currentScreen.desc}</p>
+                            <div class="crc-section-title" style="font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin-bottom: 8px;">Key Interface Elements</div>
+                            <ul class="ui-screen-bullets">
+                                ${bulletsHTML}
+                            </ul>
+                            <div style="font-size: 11px; color: var(--text-muted); font-style: italic; margin-top: 8px;">
+                                <strong>Active screenshot:</strong> ${currentCap}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -645,16 +927,51 @@ window.switchSequenceTab = function (tab) {
     goToSlide(currentSlideIndex); // Re-render current slide
 }
 
+// Switch UI Catalog Subcategory Screen
+window.switchUiScreen = function(catIdx, scrIdx) {
+    activeUiCategoryIndex = catIdx;
+    activeUiScreenIndex = scrIdx;
+    activeUiImageIndex = 0; // Reset screenshot index
+    goToSlide(currentSlideIndex); // Re-render slide
+}
+
+// Next UI Catalog Image
+window.nextUiImage = function(e) {
+    if (e) e.stopPropagation();
+    const currentSection = slides[currentSlideIndex].uiSections[activeUiCategoryIndex];
+    const currentScreen = currentSection.screens[activeUiScreenIndex];
+    activeUiImageIndex = (activeUiImageIndex + 1) % currentScreen.images.length;
+    goToSlide(currentSlideIndex);
+}
+
+// Previous UI Catalog Image
+window.prevUiImage = function(e) {
+    if (e) e.stopPropagation();
+    const currentSection = slides[currentSlideIndex].uiSections[activeUiCategoryIndex];
+    const currentScreen = currentSection.screens[activeUiScreenIndex];
+    activeUiImageIndex = (activeUiImageIndex - 1 + currentScreen.images.length) % currentScreen.images.length;
+    goToSlide(currentSlideIndex);
+}
+
 // Switch UI Gallery Images
-window.switchGalleryImage = function (index) {
+window.switchGalleryImage = function(index) {
     activeGalleryIndex = index;
     goToSlide(currentSlideIndex); // Re-render current slide
 }
 
 // Zoom Lightbox Functionality
-function openLightbox(imgSrc, captionText) {
-    lightboxImg.src = imgSrc;
-    lightboxCaption.textContent = captionText;
+function openLightbox(imgSrcOrList, captionTextOrList, startIndex = 0) {
+    if (Array.isArray(imgSrcOrList)) {
+        lightboxImagesList = imgSrcOrList;
+        lightboxCaptionsList = Array.isArray(captionTextOrList) ? captionTextOrList : new Array(imgSrcOrList.length).fill(captionTextOrList || '');
+        lightboxCurrentIndex = startIndex;
+    } else {
+        lightboxImagesList = [imgSrcOrList];
+        lightboxCaptionsList = [captionTextOrList || ''];
+        lightboxCurrentIndex = 0;
+    }
+
+    updateLightboxContent();
     lightbox.classList.add('active');
 
     // Reset zoom and pan
@@ -662,6 +979,90 @@ function openLightbox(imgSrc, captionText) {
     panOffset = { x: 0, y: 0 };
     updateImageTransform();
 }
+
+function updateLightboxContent() {
+    if (lightboxImagesList.length === 0) return;
+    
+    // Bounds check
+    if (lightboxCurrentIndex < 0) lightboxCurrentIndex = lightboxImagesList.length - 1;
+    if (lightboxCurrentIndex >= lightboxImagesList.length) lightboxCurrentIndex = 0;
+
+    lightboxImg.src = lightboxImagesList[lightboxCurrentIndex];
+    lightboxCaption.textContent = lightboxCaptionsList[lightboxCurrentIndex] || 'Diagram';
+
+    const prevBtnEl = document.getElementById('lightboxPrevBtn');
+    const nextBtnEl = document.getElementById('lightboxNextBtn');
+    if (prevBtnEl && nextBtnEl) {
+        if (lightboxImagesList.length > 1) {
+            prevBtnEl.style.display = 'flex';
+            nextBtnEl.style.display = 'flex';
+        } else {
+            prevBtnEl.style.display = 'none';
+            nextBtnEl.style.display = 'none';
+        }
+    }
+}
+
+function lightboxNext() {
+    if (lightboxImagesList.length <= 1) return;
+    lightboxCurrentIndex = (lightboxCurrentIndex + 1) % lightboxImagesList.length;
+    updateLightboxContent();
+    syncLightboxIndexToSlide();
+    
+    // Reset zoom and pan on slide swap
+    zoomLevel = 1.0;
+    panOffset = { x: 0, y: 0 };
+    updateImageTransform();
+}
+
+function lightboxPrev() {
+    if (lightboxImagesList.length <= 1) return;
+    lightboxCurrentIndex = (lightboxCurrentIndex - 1 + lightboxImagesList.length) % lightboxImagesList.length;
+    updateLightboxContent();
+    syncLightboxIndexToSlide();
+    
+    // Reset zoom and pan on slide swap
+    zoomLevel = 1.0;
+    panOffset = { x: 0, y: 0 };
+    updateImageTransform();
+}
+
+function syncLightboxIndexToSlide() {
+    const slide = slides[currentSlideIndex];
+    if (!slide) return;
+    
+    if (slide.type === 'ui-catalog') {
+        activeUiImageIndex = lightboxCurrentIndex;
+        goToSlide(currentSlideIndex);
+    } else if (slide.type === 'sequence') {
+        activeSequenceTab = lightboxCurrentIndex === 0 ? 'admin' : 'learner';
+        goToSlide(currentSlideIndex);
+    }
+}
+
+// Global helpers for opening Lightbox Zoom from slide templates
+window.openUIZoom = function() {
+    const slide = slides[currentSlideIndex];
+    if (slide && slide.type === 'ui-catalog') {
+        const currentSection = slide.uiSections[activeUiCategoryIndex];
+        const currentScreen = currentSection.screens[activeUiScreenIndex];
+        openLightbox(currentScreen.images, currentScreen.captions, activeUiImageIndex);
+    }
+};
+
+window.openSequenceZoom = function() {
+    const slide = slides[currentSlideIndex];
+    if (slide && slide.type === 'sequence') {
+        const imagesList = [slide.images.admin, slide.images.learner];
+        const captionsList = ['Admin Interaction Sequence', 'Learner Interaction Sequence'];
+        const startIndex = activeSequenceTab === 'admin' ? 0 : 1;
+        openLightbox(imagesList, captionsList, startIndex);
+    }
+};
+
+window.openDiagramZoom = function(imgSrc, captionText) {
+    openLightbox(imgSrc, captionText, 0);
+};
 
 function closeLightbox() {
     lightbox.classList.remove('active');
@@ -715,6 +1116,21 @@ function setupEventListeners() {
     // Lightbox Controls
     lightboxCloseBtn.addEventListener('click', closeLightbox);
 
+    const prevBtnEl = document.getElementById('lightboxPrevBtn');
+    const nextBtnEl = document.getElementById('lightboxNextBtn');
+    if (prevBtnEl) {
+        prevBtnEl.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightboxPrev();
+        });
+    }
+    if (nextBtnEl) {
+        nextBtnEl.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightboxNext();
+        });
+    }
+
     zoomInBtn.addEventListener('click', () => {
         zoomLevel = Math.min(zoomLevel + 0.25, 4.0);
         updateImageTransform();
@@ -764,7 +1180,15 @@ function setupEventListeners() {
     // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
         if (lightbox.classList.contains('active')) {
-            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                lightboxNext();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                lightboxPrev();
+            }
             return;
         }
 
@@ -800,6 +1224,13 @@ function preloadSlideImages() {
             } else if (typeof slide.images === 'object') {
                 Object.values(slide.images).forEach(img => imagesToPreload.add(img));
             }
+        }
+        if (slide.uiSections) {
+            slide.uiSections.forEach(section => {
+                section.screens.forEach(screen => {
+                    screen.images.forEach(img => imagesToPreload.add(img));
+                });
+            });
         }
     });
 
